@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Math_Game;
+
+UserInterFace.Header();
+Helpers.Greeting();
+UserInterFace.Menu();
+UserInterFace.Game();
+
+
+
+
+
+
+
+Console.ReadLine();
