@@ -133,5 +133,24 @@ namespace Math_Game
             }
         }
 
+        internal static void AskQuestion(int number1, int number2)
+        {
+            Console.Write($"What is {number1} + {number2} = ");
+        }
+
+        internal static void CorrectAnswer()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("That's Correct.");
+            Console.ResetColor();
+        }
+
+        internal static void WrongAnswer()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("That's Wrong.");
+            Console.ResetColor();
+        }
+
     }
 }
