@@ -9,8 +9,7 @@
 
             return name;
         }
-
-        internal static void Greeting() 
+        internal static void Greeting()
         {
             DateTime time = DateTime.Now;
             string name = GetUserName();
@@ -19,48 +18,47 @@
             if (militaryTime >= 1 && militaryTime <= 12)
             {
                 Console.WriteLine($"Good Morning {name}, Please choose from the menu below..");
-            } else if (militaryTime >= 13 && militaryTime <= 17)
+            }
+            else if (militaryTime >= 13 && militaryTime <= 17)
             {
                 Console.WriteLine($"Good afternoon {name}, Please choose from the menu below..");
-            } else
+            }
+            else
             {
                 Console.WriteLine($"Good evening {name}, Please choose from the menu below: ");
             }
 
         }
-
-        internal static (int random1, int random2) LevelOfDificulty() 
+       
+        internal static (int number1, int number2) GetRandomNumbers()
         {
+            string level = UserInterFace.GameLevel();
             Random random = new Random();
 
-            int random1 = 0;
-            int random2 = 0;
+            int number1 = 0;
+            int number2 = 0;
 
-            Console.WriteLine(@"Choose your level of difficulty: 
-'E' Easy (1 to 10).
-'M' Medium (1 to 50).
-'D' Difficult (1 to 100).");
-
-            string userChoice = Console.ReadLine().Trim().ToUpper();
-
-            switch(userChoice)
+            if (level == "Easy") 
             {
-                case "E":
-                    random1 = random.Next(1, 11);
-                    random2 = random.Next(1, 11);
-                    break;
-                case "M":
-                    random1 = random.Next(1, 51);
-                    random2 = random.Next(1, 51);
-                    break;
-                case "D":
-                    random1 = random.Next(1, 101);
-                    random2 = random.Next(1, 101);
-                    break;
+                number1 = random.Next(1, 11);
+                number2 = random.Next(1, 11);
+            }
+            if (level == "Medium") 
+            {
+                number1 = random.Next(1, 51);
+                number2 = random.Next(1, 51);
+            }
+            if (level == "Difficult")
+            {
+                number1 = random.Next(1, 101);
+                number2 = random.Next(1, 101);
             }
 
-            return (random1, random2);
 
+            return (number1, number2);
         }
+
+  
+     
     }
 }
