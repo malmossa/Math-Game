@@ -30,35 +30,25 @@
 
         }
        
-        internal static (int number1, int number2) GetRandomNumbers()
+        internal static (int number1, int number2) EasyGame()
         {
-            string level = UserInterFace.GameLevel();
             Random random = new Random();
-
-            int number1 = 0;
-            int number2 = 0;
-
-            if (level == "Easy") 
-            {
-                number1 = random.Next(1, 11);
-                number2 = random.Next(1, 11);
-            }
-            if (level == "Medium") 
-            {
-                number1 = random.Next(1, 51);
-                number2 = random.Next(1, 51);
-            }
-            if (level == "Difficult")
-            {
-                number1 = random.Next(1, 101);
-                number2 = random.Next(1, 101);
-            }
-
+            int number1 = random.Next(1, 11);
+            int number2 = random.Next(1, 11);
 
             return (number1, number2);
         }
 
-  
-     
+        internal static (int number1, int number2) MediumGame()
+        {
+            Random random = new Random();
+            int number1 = random.Next(1, 51);
+            int number2 = random.Next(1, 51);
+
+            return (number1, number2);
+        }
+
+
+
     }
 }
