@@ -1,5 +1,7 @@
 ﻿
 
+using System;
+
 namespace Math_Game
 {
     internal class UserInterFace
@@ -35,7 +37,52 @@ namespace Math_Game
 'E' Exit. ");
         }
 
-       
+        internal static int GameQuestions()
+        {
+            Console.Write("Choose how many questions you want your game to be: ");
+            int userChoice = Convert.ToInt32(Console.ReadLine().Trim().ToUpper());
+
+            return userChoice;
+        }
+
+        internal static string GameLevel()
+        {
+            string level = string.Empty;
+            bool isUserChoiceValid = false;
+
+            while (!isUserChoiceValid)
+            {
+                Console.WriteLine(@"Choose your level of difficulty: 
+ 'E' Easy (1 to 10).
+ 'M' Medium (1 to 50).
+ 'D' Difficult (1 to 100).");
+
+                Console.Write("Your choice: ");
+                string userChoice = Console.ReadLine().Trim().ToUpper();
+
+                switch (userChoice)
+                {
+                    case "E":
+                        level = "Easy";
+                        isUserChoiceValid = true;
+                        break;
+                    case "M":
+                        level = "Medium";
+                        isUserChoiceValid = true;
+                        break;
+                    case "D":
+                        level = "Difficult";
+                        isUserChoiceValid = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice, you need to choose the level of difficulty..");
+                        break;
+                }
+
+            }
+
+            return level;
+        }
 
         internal static void Game()
         {
@@ -77,6 +124,7 @@ namespace Math_Game
                         break;
                     default:
                         Console.WriteLine("Invalid input.. Try again.");
+                        Console.WriteLine();
                         Console.Write("Your choice: ");
                         userChoice = Console.ReadLine().Trim().ToUpper();
                         break;
