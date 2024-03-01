@@ -1,11 +1,10 @@
 ﻿
-using System;
-using System.Diagnostics;
-
 namespace Math_Game
 {
     internal class UserInterFace
     {
+        
+
         internal static void divider()
         {
             Console.WriteLine("------------------------------------------------------------");
@@ -96,7 +95,7 @@ namespace Math_Game
                 switch (userChoice)
                 {
                     case "V":
-                        Games.ViewGameHistory();
+                        Console.WriteLine("View Game History");
                         break;
                     case "A":
                         Games.Add();
@@ -172,6 +171,7 @@ namespace Math_Game
             Console.Write(time);
             Console.ResetColor();
         }
+
 
     }
 }
