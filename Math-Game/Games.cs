@@ -1,10 +1,12 @@
-﻿
+﻿using System.Diagnostics;
+
 namespace Math_Game
 {
     internal class Games
     {
         internal static void Add()
         {
+            Stopwatch timer = new Stopwatch();
             int NumberOfquestions = UserInterFace.GameQuestions();
 
             int questions = 0;
@@ -16,6 +18,8 @@ namespace Math_Game
 
             while(questions < NumberOfquestions)
             {
+                timer.Start();
+
                 switch (level)
                 {
                     case "Easy":
@@ -52,10 +56,32 @@ namespace Math_Game
                         }
                         questions++;
                         break;
+                    case "Difficult":
+                        (int number1, int number2) randomsDifficult = Helpers.DifficultGame();
 
+                        UserInterFace.AskQuestion(randomsDifficult.number1, randomsDifficult.number2);
+                        userAnswer = Convert.ToInt32(Console.ReadLine());
+
+                        if ((randomsDifficult.number1 + randomsDifficult.number2) == userAnswer)
+                        {
+                            UserInterFace.CorrectAnswer();
+                            correctAnswers++;
+                        }
+                        else
+                        {
+                            UserInterFace.WrongAnswer();
+                            wrongAnswers++;
+                        }
+                        questions++;
+                        break;
                 }
                
             }
+
+            timer.Stop();
+
+            TimeSpan gameTime = timer.Elapsed;
+            UserInterFace.GameResult(correctAnswers, wrongAnswers, gameTime.ToString("mm\\:ss"));
         }
 
         internal static void Subtract()

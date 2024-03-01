@@ -48,6 +48,15 @@
             return (number1, number2);
         }
 
+        internal static (int number1, int number2) DifficultGame()
+        {
+            Random random = new Random();
+            int number1 = random.Next(1, 101);
+            int number2 = random.Next(1, 101);
+
+            return (number1, number2);
+        }
+
 
 
     }
