@@ -29,7 +29,7 @@
             }
 
         }
-       
+ 
         internal static (int number1, int number2) EasyGame()
         {
             Random random = new Random();
@@ -56,8 +56,7 @@
 
             return (number1, number2);
         }
-
-
+ 
 
     }
 }

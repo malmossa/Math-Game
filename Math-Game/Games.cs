@@ -16,9 +16,9 @@ namespace Math_Game
 
             string level = UserInterFace.GameLevel();
 
+            timer.Start();
             while(questions < NumberOfquestions)
             {
-                timer.Start();
 
                 switch (level)
                 {
@@ -75,9 +75,7 @@ namespace Math_Game
                         questions++;
                         break;
                 }
-               
             }
-
             timer.Stop();
 
             TimeSpan gameTime = timer.Elapsed;
@@ -103,12 +101,6 @@ namespace Math_Game
         {
             Console.WriteLine("This is the Random Game.");
         }
-
-        internal static void ViewGameHistory()
-        {
-            Console.WriteLine("Game History.");
-        }
-
 
     }
 }
