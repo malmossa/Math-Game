@@ -1,6 +1,6 @@
 ﻿
-
 using System;
+using System.Diagnostics;
 
 namespace Math_Game
 {
@@ -149,6 +149,27 @@ namespace Math_Game
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("That's Wrong.");
+            Console.ResetColor();
+        }
+
+        internal static void GameResult(int correct, int wrong, string time) 
+        {
+            Console.WriteLine("********************");
+            Console.WriteLine("*** Game Results ***");
+            Console.WriteLine("********************");
+            Console.Write($"Correct Answers: ");
+            Console.ForegroundColor= ConsoleColor.Green;
+            Console.Write(correct);
+            Console.ResetColor();
+
+            Console.Write($" Wrong Answers: ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(wrong);
+            Console.ResetColor();
+
+            Console.Write($" Game Time: ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(time);
             Console.ResetColor();
         }
 
